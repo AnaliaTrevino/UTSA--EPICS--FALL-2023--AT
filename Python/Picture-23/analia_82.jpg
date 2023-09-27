@@ -1,0 +1,26 @@
+import os
+
+# Define the folder path where your images are located
+folder_path = 'C:\\Users\\anali\\OneDrive\\Documents\\Picture-23'
+
+
+# Get a list of all files in the folder
+files = os.listdir(folder_path)
+
+# Define a starting index for renaming (e.g., 1)
+index = 1
+
+# Loop through the files and rename them sequentially
+for filename in files:
+    # Construct the new filename with the index
+    new_filename = f'analia_{index}.jpg'  # You can change the format as needed
+    # Build the full paths for the old and new filenames
+    old_path = os.path.join(folder_path, filename)
+    new_path = os.path.join(folder_path, new_filename)
+    
+    # Rename the file
+    os.rename(old_path, new_path)
+    
+    # Increment the index for the next file
+    index += 1
+
